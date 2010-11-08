@@ -1,0 +1,3 @@
+modules/*/config/view.yml:
+  class: sfSmartphoneViewConfigHandler
+  file: %SF_PLUGINS_DIR%/sfSmartphoneViewPlugin/lib/config/sfSmartphoneViewConfigHandler.class.php
