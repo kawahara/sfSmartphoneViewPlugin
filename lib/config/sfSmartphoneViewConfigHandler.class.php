@@ -40,7 +40,7 @@ class sfSmartphoneViewConfigHandler extends sfViewConfigHandler
     $first = true;
     $data[] = "\$un = false;\n";
 
-    if ($this->getConfigValue('use_smartphone_layout', ''))
+    if ($this->getConfigValue('use_smartphone_view', ''))
     {
       $data[] = "\$un = true;\n";
     }
@@ -53,7 +53,7 @@ class sfSmartphoneViewConfigHandler extends sfViewConfigHandler
 
       $data[] = ($first ? '' : 'else ')."if (\$templateName.\$this->viewName == '$viewName')\n".
                 "{\n";
-      if ($this->getConfigValue('use_smartphone_layout', $viewName))
+      if ($this->getConfigValue('use_smartphone_view', $viewName))
       {
         $data[] = "  \$un = true;\n";
       }
