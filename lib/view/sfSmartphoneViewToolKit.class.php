@@ -28,11 +28,14 @@ class sfSmartphoneViewToolKit
   {
     $config = $context->getConfiguration();
 
-    $file = $config->getTemplateDir($moduleName, $view->getTemplate())
-          . DIRECTORY_SEPARATOR
-          . $actionName.$viewName.sfInflector::camelize($suffix).$view->getExtension();
+    $templateFile = $actionName.$viewName.sfInflector::camelize($suffix).$view->getExtension();
 
-    return is_readable($file);
+    if ($config->getTemplateDir($moduleName, $templateFile))
+    {
+      return true;
+    }
+
+    return false;
   }
 
   static public function getGeneralSmartphoneSuffix()
